@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>VendingMachineItemGPTTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">AllTests (1) (Oct 27, 2023 2:35:51 PM)</a> &gt; <a href="../../index.html" class="el_group">VendingMachineGPT</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemGPTTest.java</span></div><h1>VendingMachineItemGPTTest.java</h1><pre class="source lang-java linenums">package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+<span class="fc" id="L9">public class VendingMachineItemGPTTest {</span>
+
+	VendingMachineItemGPT item;
+	
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L15">		item = new VendingMachineItemGPT(&quot;juice&quot;, 1.75);</span>
+<span class="fc" id="L16">	}</span>
+
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L20">	}</span>
+
+	@Test
+    public void testConstructorWithValidPrice() throws VendingMachineExceptionGPT {
+<span class="fc" id="L24">        assertEquals(&quot;juice&quot;, item.getName());</span>
+<span class="fc" id="L25">        assertEquals(1.75, item.getPrice(), 0.01);</span>
+<span class="fc" id="L26">    }</span>
+
+    @Test(expected = VendingMachineExceptionGPT.class)
+    public void testConstructorWithNegativePrice() throws VendingMachineExceptionGPT {
+<span class="nc" id="L30">        new VendingMachineItemGPT(&quot;Chips&quot;, -0.5);</span>
+<span class="nc" id="L31">    }</span>
+	
+	@Test
+	public void testGetName() {
+<span class="fc" id="L35">	    String result = item.getName();</span>
+	    // Then
+<span class="fc" id="L37">	    assertEquals(&quot;juice&quot;, result);</span>
+<span class="fc" id="L38">	}</span>
+
+	@Test
+    public void testGetPrice() {
+<span class="fc" id="L42">        VendingMachineItemGPT item = new VendingMachineItemGPT(&quot;Chips&quot;, 1.75);</span>
+<span class="fc" id="L43">        assertEquals(1.75, item.getPrice(), 0.01);</span>
+<span class="fc" id="L44">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span>AllTests (1) (Oct 27, 2023 2:35:51 PM)</div></body></html>
